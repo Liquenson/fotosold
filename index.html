@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Múltiples Fotos</title>
+</head>
+<body>
+    <h1>Subir Múltiples Fotos</h1>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <label for="files">Selecciona las fotos:</label>
+        <input type="file" name="files[]" id="files" multiple accept="image/*">
+        <br><br>
+        <input type="submit" value="Subir Fotos">
+    </form>
+</body>
+</html>
