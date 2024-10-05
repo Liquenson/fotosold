@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir Múltiples Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <h1>Subir Múltiples Fotos</h1>
@@ -13,5 +28,21 @@
         <br><br>
         <input type="submit" value="Subir Fotos">
     </form>
+
+    <h2>Galería de Fotos</h2>
+    <div class="gallery">
+        <?php
+        // Mostrar todas las imágenes de la carpeta fotosaqui
+        $dir = "fotosaqui/";
+        if (is_dir($dir)) {
+            $images = glob($dir . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+            foreach ($images as $image) {
+                echo "<img src='$image' alt='Imagen'>";
+            }
+        } else {
+            echo "No hay fotos para mostrar.";
+        }
+        ?>
+    </div>
 </body>
 </html>

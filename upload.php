@@ -1,6 +1,6 @@
 <?php
 // Ruta de la carpeta donde se guardarán las imágenes subidas
-$targetDir = "uploads/";
+$targetDir = "fotosaqui/";
 
 if (!file_exists($targetDir)) {
     mkdir($targetDir, 0777, true);  // Crea la carpeta si no existe
@@ -29,4 +29,7 @@ if (!empty($_FILES['files']['name'][0])) {
 } else {
     echo "Por favor selecciona al menos un archivo.";
 }
+
+// Redirigir de vuelta a index.html
+header("Location: index.html");
 ?>
